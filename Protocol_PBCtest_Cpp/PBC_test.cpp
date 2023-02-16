@@ -31,11 +31,11 @@ int main(int argc, char **argv)
 	element_init_G1(P,pairing);
 	element_init_G1(Ppub,pairing);
 	element_init_G1(Xu,pairing);
-	//element_init_G1(Yu,pairing);
+	element_init_G1(Yu,pairing);
 	
 	//将变量初始化为GT中的元素
 	element_init_GT(T1,pairing);
-	//element_init_GT(T2,pairing);
+	element_init_GT(T2,pairing);
 
     
 	//判断所用的配对是否为对称配对
