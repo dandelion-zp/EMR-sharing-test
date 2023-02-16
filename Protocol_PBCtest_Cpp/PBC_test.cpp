@@ -70,11 +70,11 @@ int main(int argc, char **argv)
 			//写个循环测试多次取平均值，减少误差
 			//element_random(s);
 			//element_random(P);
-			//element_mul_zn(Ppub,P,s); //公钥就是做了一次标量乘法Ppub=sP
+			//element_mul_zn(Ppub,P,s); //标量乘法 Ppub=sP
+	     		//element_pow_zn(T2,T2,s); //模幂运算 T2=T2^s
 			//element_random(Xu);
 			//element_random(Ppub);
-            pairing_apply(T1,Xu,Ppub,pairing);//T1=e(Xu,Ppub)
-            //pairing_apply(T2,Yu,P,pairing);//T2=e(Yu,P)
+            pairing_apply(T1,Xu,Ppub,pairing);//双线对运算 T1=e(Xu,Ppub)
         //}
         QueryPerformanceCounter(&nEndTime);//停止计时
         time=(double)(nEndTime.QuadPart-nBeginTime.QuadPart)/(double)nFreq.QuadPart;//计算程序执行时间单位为s
