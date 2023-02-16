@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	double maxtime=0;//用来计时，精确到微秒
 	double minitime=100;//用来计时，精确到微秒
     //定义双线性对运算的参数
-    pairing_t pairing;
+        pairing_t pairing;
 	element_t s,x,r; //整数
 	element_t public_key, secret_key;
 	element_t P,Ppub,Qu,Du,Su,Xu,Yu,V; //G1上的群元素
@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	//double time1,time2;
 	int byte;
 	pbc_demo_pairing_init(pairing, argc, argv);
+	// a_param_input(pairing); //将配对变量pairing初始化为类型A的配对
     
 	//将变量初始化为Zr上的元素
 	element_init_Zr(s,pairing);
@@ -72,7 +73,7 @@ int main(int argc, char **argv)
 			//element_random(s);
 			//element_random(P);
 			//element_mul_zn(Ppub,P,s); //标量乘法 Ppub=sP
-	     		//element_pow_zn(T2,T2,s); //模幂运算 T2=T2^s
+	     		//element_pow_zn(T2,T2,s); // T2=T2^s
 			//element_random(Xu);
 			//element_random(Ppub);
             pairing_apply(T1,Xu,Ppub,pairing);//双线对运算 T1=e(Xu,Ppub)
