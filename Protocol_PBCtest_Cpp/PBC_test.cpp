@@ -16,6 +16,7 @@ int main(int argc, char **argv)
     //定义双线性对运算的参数
     pairing_t pairing;
 	element_t s,x,r; //整数
+	element_t public_key, secret_key;
 	element_t P,Ppub,Qu,Du,Su,Xu,Yu,V; //G1上的群元素
 	element_t T1,T2;//GT上的群元素
 	//double time1,time2;
