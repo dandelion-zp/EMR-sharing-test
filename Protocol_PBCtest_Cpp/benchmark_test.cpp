@@ -88,7 +88,7 @@ int main(int argc, char **argv) {
 	LARGE_INTEGER nEndTime;
 	QueryPerformanceFrequency(&nFreq);
 
-  n = 100;
+  n = 100; //控制循环次数， 取均值减少误差
   ttotal = 0.0;
   ttotalpp = 0.0;
   ttotalSM = 0.0;
@@ -144,7 +144,7 @@ int main(int argc, char **argv) {
 
 	//------------Hash function-------------
 	QueryPerformanceCounter(&nBeginTime);//开始计时
-	element_from_hash(h, "ABCDEF", 6); //hash映射
+	element_from_hash(h, "ABCDEF", 6); //hash映射，映射到Zr
 	//element_printf("h = %B\n", h);
 	QueryPerformanceCounter(&nEndTime);//停止计时
 	ttotalHF +=(double)(nEndTime.QuadPart-nBeginTime.QuadPart)/(double)nFreq.QuadPart;//计算程序执行时间单位为微秒。*1000转换成ms
